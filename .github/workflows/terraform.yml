@@ -32,12 +32,11 @@ jobs:
     - name: Terraform Init
       id: init
       run: terraform init
-
-         
+    
     - name: Terraform Plan
       id: plan
       run: terraform plan -no-color -out=tfplan
       continue-on-error: true
-
+    
     - name: Terraform Apply
       run: terraform apply -auto-approve tfplan
